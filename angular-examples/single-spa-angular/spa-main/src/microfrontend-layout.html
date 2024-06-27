@@ -1,0 +1,18 @@
+<single-spa-router mode="hash">
+
+  <main>
+    <header>Main Header</header>
+    <nav>
+      <application name="@app/navbar"></application>
+    </nav>
+    <redirect from="/" to="main"></redirect>
+    <route default>
+      <application name="@app/main"></application>
+    </route>
+    <!-- <route path="navbar"> -->
+      <!-- <application name="@app/navbar"></application> -->
+    <!-- </route> -->
+     
+<footer>My footer</footer>
+  </main>
+</single-spa-router>
