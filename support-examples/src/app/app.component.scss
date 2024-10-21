@@ -1,0 +1,12 @@
+.link {
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+    padding: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
