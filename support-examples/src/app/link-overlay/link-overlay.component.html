@@ -1,0 +1,19 @@
+<h3>Link Overlay on Hover</h3>
+
+<div class="container">
+    <div class="container-link" *ngFor="let link of links; let i = index">
+      <a href="javascript:void(0);" class="link" (mouseenter)="debouncedMouseEnter(i, link.image, link.text, $event)"
+        (mouseleave)="onMouseLeave($event)">
+        {{ link.text }}
+      </a>
+  
+    </div>
+    <!-- Single Overlay -->
+    <div #overlayElement class="overlay" [ngClass]="{ 'show': showOverlay }" [style.top]="overlayPosition.top"
+      [style.left]="overlayPosition.left" (mouseenter)="onMouseEnterOverlay($event)" (mouseleave)="onMouseLeave($event)">
+      <a *ngIf="showOverlay">
+        <img [src]="overlayImage" alt="Overlay Image" />
+      </a>
+    </div>
+</div>
+  
