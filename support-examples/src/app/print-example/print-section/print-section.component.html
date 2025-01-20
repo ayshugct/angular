@@ -1,0 +1,5 @@
+
+<div class="content" *ngFor="let table of [].constructor(numberOfTables); let i = index">
+    <p>Table Header {{i+1}}</p>
+    <app-print-table [numberOfRow]="numberOfRows"></app-print-table>
+</div>

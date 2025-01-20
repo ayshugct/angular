@@ -1,0 +1,32 @@
+<header class="print-header">
+    <p>Ticket No</p>
+</header>
+
+<!-- Your page content -->
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <label class="col">No of Sections to add:</label>
+            <input class="col" type="number" [(ngModel)]="numberOfSections" />
+        </div>
+        <div class="row">
+            <label class="col">No of Tables to add:</label>
+            <input class="col" type="number" [(ngModel)]="numberOfTables" />
+        </div>
+        <div class="row">
+            <label class="col">No of rows to Tables to add:</label>
+            <input class="col" type="number" [(ngModel)]="numberOfRows" />
+        </div>
+        <div class="row">
+            <button class="col" type="submit" (click)="onSubmit()">Submit</button>
+            <button class="col" type="reset" (click)="onReset()">Reset</button>
+        </div>
+    </div>
+
+    <div *ngIf="showTables">
+        <div class="section" *ngFor="let table of [].constructor(numberOfSections); let i = index">
+            <p>Section Header {{i+1}}</p>
+            <app-print-section [numberOfTables]="numberOfTables" [numberOfRows]="numberOfRows"></app-print-section>
+        </div>
+    </div>
+</div>

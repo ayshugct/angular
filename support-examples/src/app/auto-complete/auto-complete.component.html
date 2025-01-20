@@ -1,0 +1,23 @@
+<div class="p-fluid p-grid">
+    <!-- <div class="p-field p-col-12 p-md-4">
+      <label for="autocomplete">Search for a fruit</label>
+      <p-autoComplete 
+        [(ngModel)]="selectedItem" 
+        [suggestions]="suggestions" 
+        (completeMethod)="search($event)" 
+        [dropdown]="true" 
+        placeholder="Start typing...">
+      </p-autoComplete>
+    </div>
+  </div> -->
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Pick a state</mat-label>
+    <input type="text" matInput [matAutocomplete]="auto" [(ngModel)]="selectedItem">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let state of allItems" [value]="state">
+        {{ state }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>

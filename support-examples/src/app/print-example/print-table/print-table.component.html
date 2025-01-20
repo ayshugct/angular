@@ -1,0 +1,16 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of [].constructor(numberOfRow); let i = index">
+            <td>Row {{ i + 1 }} Col 1</td>
+            <td>Row {{ i + 1 }} Col 2</td>
+            <td>Row {{ i + 1 }} Col 3</td>
+        </tr>
+    </tbody>
+</table>

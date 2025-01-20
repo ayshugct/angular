@@ -1,0 +1,82 @@
+.container {
+    @media print {
+        display: none;
+    }
+    .row {
+        padding: 20px;
+
+        .col {
+            width: 150px;
+        }
+    }
+}
+
+.section {
+    padding: 20px;
+    border: 0.5px solid red;
+    page-break-inside: avoid;
+}
+
+/* Default header visibility for screen */
+.print-header {
+    display: none;
+}
+
+/* Print styles */
+@media print {
+    /* Ensure the header appears at the top of every printed page */
+    .print-header {
+        display: block;
+        position: fixed;
+        top: 20;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        // border-bottom: 1px solid black;
+        // page-break-before: always; /* Ensures it appears on every new printed page */
+        // margin-bottom: 10mm; /* Adjust space between header and content */
+    }
+
+    /* Prevent content from overlapping the header */
+    body {
+        margin-top: 160px; /* Space for header */
+        padding-top: 160px; /* Space for header */
+    }
+
+    .content {
+        margin-top: 0; /* Remove space between header and content */
+    }
+
+    /* Hide elements not needed for print */
+    .no-print {
+        display: none;
+    }
+
+    /* Ensure sections break correctly across pages */
+    .content {
+        page-break-before: always;
+        page-break-after: avoid;
+    }
+
+    .content > div, .section {
+        page-break-inside: avoid; /* Avoid breaking inside sections */
+    }
+
+    /* Avoid page breaks inside tables */
+    table {
+        page-break-inside: avoid;
+    }
+
+    /* Adjust page breaks in the body */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensure correct pagination */
+    @page {
+        size: auto;
+        margin: 20mm; /* Adjust margins for print */
+    }
+}
